@@ -1,6 +1,8 @@
 #include <iostream>
+#include "PrintHelper.h"
 
-void PrintHelloWorld()
+
+void PrintMessage(std::string message)
 {
-    std::cout << "Hello World!\n";
+    std::cout << message << std::endl;
 }

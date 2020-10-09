@@ -3,5 +3,5 @@
 // Run Main Program
 int main()
 {
-    PrintHelloWorld();
+    PrintMessage("Hello Queenie!");
 }

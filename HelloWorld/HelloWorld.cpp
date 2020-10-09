@@ -3,5 +3,7 @@
 // Run Main Program
 int main()
 {
-    PrintMessage("Hello Queenie!");
+    PrintHelper MyPrintHelper; 
+    MyPrintHelper.GetUserInput();
+    MyPrintHelper.PrintMessages();
 }

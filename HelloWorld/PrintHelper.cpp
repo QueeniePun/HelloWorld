@@ -1,8 +1,9 @@
 #include <iostream>
 #include "PrintHelper.h"
 
+using namespace std;
 
-void PrintMessage(std::string message)
+void PrintMessage(string message)
 {
-    std::cout << message << std::endl;
+    cout << message << endl;
 }

@@ -1,2 +1,4 @@
 #pragma once
-void PrintHelloWorld();
+#include <string>
+
+void PrintMessage(std::string message);

@@ -7,6 +7,6 @@ using namespace std;
 int main()
 {
    BaseConverter MyBaseConverter;
-   int test =  MyBaseConverter.ConvertToBase10("3F7A0E", 16);
+   int test =  MyBaseConverter.ConvertToBase10("3f7A0E", 16);
    cout << test << endl;
 }

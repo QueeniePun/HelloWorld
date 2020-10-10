@@ -21,27 +21,27 @@ int BaseConverter::ConvertToBase10(string inputValue, int inputBase)
         char indexChar = inputValue[i]; 
         if (inputBase == 16 && isalpha(indexChar))
         {
-            if (indexChar == 'A')
+            if (indexChar == 'A' || indexChar == 'a')
             {
                 sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 10;
             }
-            else if (indexChar == 'B')
+            else if (indexChar == 'B' || indexChar == 'b')
             {
                 sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 11;
             }
-            else if (indexChar == 'C')
+            else if (indexChar == 'C' || indexChar == 'c')
             {
                 sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 12;
             }
-            else if (indexChar == 'D')
+            else if (indexChar == 'D' || indexChar == 'd')
             {
                 sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 13;
             }
-            else if (indexChar == 'E')
+            else if (indexChar == 'E' || indexChar == 'e')
             {
                 sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 14;
             }
-            else if (indexChar == 'F')
+            else if (indexChar == 'F' || indexChar == 'f')
             {
                 sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 15;
             }

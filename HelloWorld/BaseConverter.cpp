@@ -19,9 +19,11 @@ int BaseConverter::ConvertToBase10(string inputValue, int inputBase)
         // inputValue is a string, using string::operator[] returns a char
         // Converting char to string in order to use stoi() which converts a string to int
         char indexChar = inputValue[i]; 
+        int multiplier = 0;
+
+        // Handles hex values greater than 9
         if (inputBase == 16 && isalpha(indexChar))
         {
-            int multiplier = 0; 
             if (indexChar == 'A' || indexChar == 'a')
             {
                 multiplier = 10;
@@ -46,23 +48,23 @@ int BaseConverter::ConvertToBase10(string inputValue, int inputBase)
             {
                 multiplier = 15;
             }
-            sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * multiplier;
         }
-        else {
+        // Handles nominal cases 0 to 9
+        else
+        {
             // Use string constructer to convert char to string 
             // Reference: https://www.techiedelight.com/convert-char-to-string-cpp/
             string indexString(1, indexChar);
 
             // Use stoi() to convert string to int
             // Reference: http://www.cplusplus.com/reference/string/stoi/
-            int indexInt = stoi(indexString); 
-
-            sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * indexInt;
+            multiplier = stoi(indexString);
         }
 
+        sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * multiplier;
     }
+
     return sum;
-   
 }
 
 

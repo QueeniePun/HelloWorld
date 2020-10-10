@@ -5,7 +5,10 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\PrintHelper">
+    <Filter Include="Source Files\BaseConverter">
+      <UniqueIdentifier>{dc7f87e7-3429-4158-9e5a-bdb4bf31fdf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConsoleHelper">
       <UniqueIdentifier>{bd5c6335-9293-45fa-a21d-b726f8cea16b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -13,13 +16,19 @@
     <ClCompile Include="HelloWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PrintHelper.cpp">
-      <Filter>Source Files\PrintHelper</Filter>
+    <ClCompile Include="BaseConverter.cpp">
+      <Filter>Source Files\BaseConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleHelper.cpp">
+      <Filter>Source Files\ConsoleHelper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PrintHelper.h">
-      <Filter>Source Files\PrintHelper</Filter>
+    <ClInclude Include="BaseConverter.h">
+      <Filter>Source Files\BaseConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleHelper.h">
+      <Filter>Source Files\ConsoleHelper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

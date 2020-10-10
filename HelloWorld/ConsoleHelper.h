@@ -2,12 +2,10 @@
 #include <iostream>
 #include <string>
 
-class PrintHelper 
+class ConsoleHelper 
 {
 private:
     // Members
-    std::string inputMessage_;
-    int loopLimit_;
 
     // Methods
     void printMessage(std::string message);
@@ -16,17 +14,14 @@ public:
     // Methods
     void PrintMessages(int x, std::string message);
 
-    void PrintMessages();
+    std::string GetUserString(std::string userPrompt);
 
-    void GetUserInput();
+    int GetUserInt(std::string userPrompt);
+
 
     // Default Constructor
-    PrintHelper()
-    {
-        inputMessage_ = "";
-        loopLimit_ = 0;
-    }
+    ConsoleHelper() {}
 
     // Destructor
-    ~PrintHelper() {}
+    ~ConsoleHelper() {}
 };

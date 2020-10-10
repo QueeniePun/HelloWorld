@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseConverter.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
-    <ClCompile Include="PrintHelper.cpp" />
+    <ClCompile Include="ConsoleHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PrintHelper.h" />
+    <ClInclude Include="BaseConverter.h" />
+    <ClInclude Include="ConsoleHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

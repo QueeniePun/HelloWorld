@@ -21,30 +21,32 @@ int BaseConverter::ConvertToBase10(string inputValue, int inputBase)
         char indexChar = inputValue[i]; 
         if (inputBase == 16 && isalpha(indexChar))
         {
+            int multiplier = 0; 
             if (indexChar == 'A' || indexChar == 'a')
             {
-                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 10;
+                multiplier = 10;
             }
             else if (indexChar == 'B' || indexChar == 'b')
             {
-                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 11;
+                multiplier = 11;
             }
             else if (indexChar == 'C' || indexChar == 'c')
             {
-                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 12;
+                multiplier = 12;
             }
             else if (indexChar == 'D' || indexChar == 'd')
             {
-                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 13;
+                multiplier =  13;
             }
             else if (indexChar == 'E' || indexChar == 'e')
             {
-                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 14;
+                multiplier =  14;
             }
             else if (indexChar == 'F' || indexChar == 'f')
             {
-                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 15;
+                multiplier = 15;
             }
+            sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * multiplier;
         }
         else {
             // Use string constructer to convert char to string 
@@ -57,6 +59,7 @@ int BaseConverter::ConvertToBase10(string inputValue, int inputBase)
 
             sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * indexInt;
         }
+
     }
     return sum;
    

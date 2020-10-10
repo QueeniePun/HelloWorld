@@ -14,7 +14,8 @@ private:
 
 public:
     // Methods
-    std::string ConvertBase(int inputValue, int targetBase);
+    int ConvertToBase10(std::string inputValue, int inputBase);
+    std::string ConvertToTargetBase(int inputValue, int targetBase);
 
     // Default Constructor
     BaseConverter()

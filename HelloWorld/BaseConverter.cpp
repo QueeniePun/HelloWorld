@@ -5,15 +5,73 @@
 using namespace std;
 
 
-// Overview: Takes the input value at base 10 and converts it to a target base
-//           NOTE: this function only supports conversions of target base 2 through 10, and 16 
+// Overview: Takes the input value with corresponding input base and converts it to base 10
+//           NOTE: This function only supports conversions of input base 2 through 10, and 16      
+// Input   : string - input value
+//           int - input base
+// Output  : int - of base 10
+int BaseConverter::ConvertToBase10(string inputValue, int inputBase)
+{
+    int sum = 0; 
+  
+    for (int i = 0; i < inputValue.length(); i++)
+    {
+        // inputValue is a string, using string::operator[] returns a char
+        // Converting char to string in order to use stoi() which converts a string to int
+        char indexChar = inputValue[i]; 
+        if (inputBase == 16 && isalpha(indexChar))
+        {
+            if (indexChar == 'A')
+            {
+                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 10;
+            }
+            else if (indexChar == 'B')
+            {
+                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 11;
+            }
+            else if (indexChar == 'C')
+            {
+                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 12;
+            }
+            else if (indexChar == 'D')
+            {
+                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 13;
+            }
+            else if (indexChar == 'E')
+            {
+                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 14;
+            }
+            else if (indexChar == 'F')
+            {
+                sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * 15;
+            }
+        }
+        else {
+            // Use string constructer to convert char to string 
+            // Reference: https://www.techiedelight.com/convert-char-to-string-cpp/
+            string indexString(1, indexChar);
+
+            // Use stoi() to convert string to int
+            // Reference: http://www.cplusplus.com/reference/string/stoi/
+            int indexInt = stoi(indexString); 
+
+            sum += (pow(inputBase, (inputValue.length() - (i + 1)))) * indexInt;
+        }
+    }
+    return sum;
+   
+}
+
+
+// Overview: Takes the input value of base 10 and converts it to a target base
+//           NOTE: this function only supports conversions to target base 2 through 10, and 16       
 // Input   : int - input value
 //           int - target base
 // Output  : string - new value at target base
-string BaseConverter::ConvertBase(int inputValue , int targetBase )
+string BaseConverter::ConvertToTargetBase(int inputValue, int targetBase)
 {
-    string str = "";
-    
+   string str = "";
+ 
    int quotient = inputValue;
    int remainder = 0;
 
@@ -49,8 +107,5 @@ string BaseConverter::ConvertBase(int inputValue , int targetBase )
            // str = to_string(remainder).append(str);
        }
    }
-
    return str;
-    
-
 }
